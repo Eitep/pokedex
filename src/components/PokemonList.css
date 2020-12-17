@@ -1,0 +1,27 @@
+.ui.list .list>.item .header, .ui.list>.item .header {
+  font-family: 'Architects Daughter', cursive;
+}
+
+.pokemon-name {
+  color: white !important;
+}
+.pokemon-list {
+  align-items: center;
+  margin-left: 70px;
+}
+
+.pokemon-name-list {
+  margin-top: 20px;
+  border: 2px solid black;
+  width: 500px;
+  height: 420px;
+  overflow: scroll;
+  background-color: #cc0000;
+}
+
+.item {
+  padding: 10px 0;
+  font-size: 32px;
+  margin-left: 5px;
+  cursor: pointer;
+}
