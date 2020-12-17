@@ -44,19 +44,20 @@ const App = () => {
   }, [searchTerm])
 
   useEffect(() => {
-    const pokemonList = async () => {
-      const {data} = await Pokemon.get('/pokemon?limit=898');
-      setList(data.results);
-      setFilteredList(data.results);
-    };
-    
     const idArray = [];
 
     for (let x = 1; x <= 898; x++){
       idArray.push(x);
     };
+
+    const pokemonList = async () => {
+      const {data} = await Pokemon.get('/pokemon?limit=898');
+      setList(data.results);
+      setFilteredList(data.results);
+      setIdList(idArray);
+    };
+
     pokemonList();
-    setIdList(idArray);
     
   }, []);
 
