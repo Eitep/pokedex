@@ -23,7 +23,7 @@ const App = () => {
     window.addEventListener('resize', () => {
       const ismobile = window.innerWidth < 700;
       if (ismobile !== isMobile) {
-        setIsMobile(ismobile);
+        return setIsMobile(ismobile);
       }
     }, false);
   }, [isMobile]);
@@ -32,7 +32,6 @@ const App = () => {
     const filteredIdList = [];
     const renderedList = list.filter((item, index) => {
       if (item.name.slice(0, searchTerm.length) === searchTerm.toLowerCase()) {
-        console.log(index);
         filteredIdList.push(index + 1);
         return item.name;
         
@@ -45,6 +44,12 @@ const App = () => {
   }, [searchTerm])
 
   useEffect(() => {
+    const pokemonList = async () => {
+      const {data} = await Pokemon.get('/pokemon?limit=898');
+      setList(data.results);
+      setFilteredList(data.results);
+    };
+    
     const idArray = [];
 
     for (let x = 1; x <= 898; x++){
@@ -54,13 +59,6 @@ const App = () => {
     setIdList(idArray);
     
   }, []);
-
-
-  const pokemonList = async () => {
-    const {data} = await Pokemon.get('/pokemon?limit=898');
-    setList(data.results);
-    setFilteredList(data.results);
-  };
 
   const onPokemonSelect = (name, index) => {
     setSelectedPokemon(name);

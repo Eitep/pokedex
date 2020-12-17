@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import './SearchBar.css';
-import Pokemon from '../Pokemon';
+
 
 const SearchBar = ({ searchTerm, onInputChangeHandler }) => {
 

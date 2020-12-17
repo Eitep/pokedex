@@ -15,6 +15,7 @@ const PokemonList = ({ searchTerm, list, onPokemonSelect, onInputChangeHandler, 
           <img 
             className="ui avatar image" 
             src={`${process.env.PUBLIC_URL}/assets/pokemon/${item.number}.png`}
+            alt={`${itemName}`}
           />
           <div className="content">
             <div className="pokemon-name header">

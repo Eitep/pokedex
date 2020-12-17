@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import './PokemonDetails.css';
 
@@ -17,7 +17,9 @@ const PokemonDetails = ({ name, index, weight, height, id, type }) => {
   return (
     <div className="pokemon-details">
       <h1 className="pokemon-details-title">{name}</h1>
-      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${index}.png`} />
+      <img 
+        src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${index}.png`}
+        alt={`${name}`} />
       <div className="grid-container">
         <div className="ui two column centered grid">
           <div className="four column centered row">
@@ -25,7 +27,7 @@ const PokemonDetails = ({ name, index, weight, height, id, type }) => {
               Weight: {weight}lbs
             </div>
             <div className="column">
-              Type: <img className="ui avatar image type" src={`${process.env.PUBLIC_URL}/assets/types/${type}.png`}/>{type}
+              Type: <img alt={`${type}`}className="ui avatar image type" src={`${process.env.PUBLIC_URL}/assets/types/${type}.png`}/>{type}
             </div>
           </div>
           <div className="four column centered row">
